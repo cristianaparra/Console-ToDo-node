@@ -1,9 +1,24 @@
-require('colors')
+require("colors");
 
-const main = async()=>{
-    console.clear()
-    console.log('hola mundo')
+const { inquirerMenu, pausa } = require("./helpers/inquirer");
 
-    
-}
-main()
+console.clear();
+
+const main = async () => {
+  console.log("hola mundo");
+
+  let opt = "";
+
+  do {
+
+    opt = await inquirerMenu();
+
+    console.log({ opt });
+
+    await pausa();
+
+  } while (opt !== "0");
+  // pause();
+};
+
+main();
